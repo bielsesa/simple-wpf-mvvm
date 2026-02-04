@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Whiskers",
+    "color": "Gray",
+    "birthDate": "2018-05-01"
+  },
+  {
+    "name": "Mittens",
+    "color": "Black",
+    "birthDate": "2019-08-15"
+  },
+  {
+    "name": "Shadow",
+    "color": "White",
+    "birthDate": "2020-12-25"
+  },
+  {
+    "name": "Chaos",
+    "color": "Orange",
+    "birthDate": "2023-02-17"
+  },
+  {
+    "name": "Rainbow",
+    "color": "Rainbow",
+    "birthDate": "2099-01-01"
+  }
+]
