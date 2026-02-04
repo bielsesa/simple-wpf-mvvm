@@ -1,0 +1,28 @@
+﻿<Window x:Class="SimpleMvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cat="clr-namespace:SimpleMvvm.Cat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="180" Width="260">
+  <Window.Resources>
+    <Style TargetType="Button">
+      <Style.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="5"/>
+          <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+      </Style.Resources>
+      <Setter Property="Padding" Value="5" />
+      <Setter Property="Margin" Value="2" />
+      <Setter Property="MinWidth" Value="60" />
+      <Setter Property="FontFamily" Value="Comic Sans MS" />
+      <Setter Property="FontSize" Value="14"/>
+    </Style>
+  </Window.Resources>
+
+  <Grid>
+        <cat:CatsView />
+    </Grid>
+</Window>
