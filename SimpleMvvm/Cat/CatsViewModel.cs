@@ -6,6 +6,8 @@ using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.Input;
 
+using SimpleMvvm.Repository;
+
 namespace SimpleMvvm.Cat
 {
     public class CatsViewModel : INotifyPropertyChanged
@@ -42,13 +44,7 @@ namespace SimpleMvvm.Cat
 
         public CatsViewModel()
         {
-            this._cats = new[]
-            {
-                new CatModel("Whiskers", CatColor.Gray, new DateTime(2018, 5, 1)),
-                new CatModel("Mittens", CatColor.Black, new DateTime(2019, 8, 15)),
-                new CatModel("Shadow", CatColor.White, new DateTime(2020, 12, 25)),
-                new CatModel("Chaos", CatColor.Orange, new DateTime(2023, 2, 23)),
-            };
+            this._cats = new CatRepository().GetAllCats();
 
             this.CatName = this._cats[this._index].Name;
             this.CatColor = this._cats[this._index].Color;
@@ -56,7 +52,7 @@ namespace SimpleMvvm.Cat
 
             this.Previous = new RelayCommand(() =>
                 {
-                    this._index = mod(this._index - 1, this._cats.Length);
+                    this._index = CustomMath.Mod(this._index - 1, this._cats.Length);
                     this.CatName = this._cats[this._index].Name;
                     this.CatColor = this._cats[this._index].Color;
                     this.CatBirthDate = this._cats[this._index].BirthDate;
@@ -86,12 +82,6 @@ namespace SimpleMvvm.Cat
             field = value;
             this.OnPropertyChanged(propertyName);
             return true;
-        }
-
-        private static int mod(int x, int m)
-        {
-            var r = x % m;
-            return r < 0 ? r + m : r;
         }
     }
 }

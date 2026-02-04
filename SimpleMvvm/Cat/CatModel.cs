@@ -2,7 +2,7 @@
 
 namespace SimpleMvvm.Cat
 {
-    internal class CatModel
+    public class CatModel
     {
         public string Name { get; private set; }
 

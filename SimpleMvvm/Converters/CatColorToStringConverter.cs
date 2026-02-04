@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Windows.Data;
 
+using SimpleMvvm.Cat;
+
 namespace SimpleMvvm.Converters
 {
     public class CatColorToStringConverter : IValueConverter
